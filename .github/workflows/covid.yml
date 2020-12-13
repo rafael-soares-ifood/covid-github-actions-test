@@ -18,4 +18,4 @@ jobs:
           repository: CSSEGISandData/COVID-19
 
       - name: test
-        - run: ls -a
+        run: ls -a
