@@ -12,9 +12,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # checkout john hopkins covid data repo
       - name: Checkout CSSE
         uses: actions/checkout@v2
         with:
           repository: CSSEGISandData/COVID-19
-        run: ls -a
+
+      - name: test
+        - run: ls -a
