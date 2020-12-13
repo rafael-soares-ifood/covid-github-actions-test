@@ -18,5 +18,5 @@ jobs:
         with:
           repository: CSSEGISandData/COVID-19
 
-      - name: "show files"
+      - name: show files
         - run: ls
