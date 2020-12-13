@@ -1,4 +1,4 @@
-name: Covid-workflow
+name: covid-workflow
 
 on: [push]   
   # schedule:
@@ -19,4 +19,4 @@ jobs:
           repository: CSSEGISandData/COVID-19
 
       - name: show files
-        - run: ls
+        - run: ls -a
