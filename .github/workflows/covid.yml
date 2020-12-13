@@ -1,0 +1,17 @@
+name: Covid-workflow
+
+on: schedule(0 8 * * *)
+
+jobs:
+  covid-workflow:
+    name: brazilian covid time series
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # checkout john hopkins covid data repo
+      - name: Checkout CSSE
+        uses: actions/ceckout@master
+        with:
+          repository: CSSEGISandData/COVID-19
