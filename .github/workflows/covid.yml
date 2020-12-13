@@ -2,7 +2,7 @@ name: Covid-workflow
 
 on:   
   schedule:
-    - cron: */2 * * * *
+    - cron: "*/2 * * * *"
 
 jobs:
   covid-workflow:
