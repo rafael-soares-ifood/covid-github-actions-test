@@ -12,15 +12,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Cloning CSSE
+      - name: Cloning CSSE repo
         run: git clone https://github.com/CSSEGISandData/COVID-19.git
 
       - name: Covid data analysis
         uses: ./
-        with:
-          path: $GITHUB_WORKSPACE
 
       - name: Show all
-        run: ls -a
+        run: ls /home/runner/work/covid-github-actions-test/covid-github-actions-test
 
 

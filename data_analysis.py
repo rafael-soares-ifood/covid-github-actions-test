@@ -13,13 +13,13 @@ def make_country_plot(path:str, country: str):
     df.plot(x='Last_Update', y='Daily_Deaths', lw = 3, alpha = 0.6, ax=ax)
     df.plot(x='Last_Update', y='Rolling_Daily_Deaths', lw = 3, alpha = 0.6, ax=ax)
     plt.ylabel('Daily deaths')
-    plt.savefig("./data/daily_deaths.png", dpi=150)
+    plt.savefig("/github/workspace/daily_deaths.png", dpi=150)
 
     fig, ax2 = plt.subplots(figsize=(18,8))
     df.plot(x='Last_Update', y='Daily_Confirmed', lw = 3, alpha = 0.6, ax=ax2)
     df.plot(x='Last_Update', y='Rolling_Daily_Confirmed', lw = 3, alpha = 0.6, ax=ax2)
     plt.ylabel('Daily confirmed cases')
-    plt.savefig("./data/daily_confirmed_cases.png", dpi=150)
+    plt.savefig("/github/workspace/daily_confirmed_cases.png", dpi=150)
 
     return None
 
@@ -48,4 +48,4 @@ def _get_csv_files_path(path: str) -> List[str]:
     return glob.glob(f'{path}/*.csv')
 
 if __name__ == '__main__':
-    make_country_plot("./data/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports", 'Brazil')
+    make_country_plot("/github/workspace/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports", 'Brazil')
