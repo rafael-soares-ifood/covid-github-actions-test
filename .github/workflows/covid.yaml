@@ -11,6 +11,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0 
 
       - name: Cloning CSSE repo
         run: git clone https://github.com/CSSEGISandData/COVID-19.git
@@ -18,7 +21,12 @@ jobs:
       - name: Covid data analysis
         uses: ./
 
-      - name: Show all
+      - name: Files produced
         run: ls /home/runner/work/covid-github-actions-test/covid-github-actions-test
 
+      - name: Push back
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Apply automatic changes
+          file_pattern: /home/runner/work/covid-github-actions-test/covid-github-actions-test/*.png
 
