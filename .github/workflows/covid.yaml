@@ -17,6 +17,8 @@ jobs:
 
       - name: Covid data analysis
         uses: ./
+        with:
+          path: $GITHUB_WORKSPACE
 
       - name: Show all
         run: ls -a
