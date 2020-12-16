@@ -12,4 +12,4 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - '-v "$GITHUB_WORKSPACE":/data'
+    - '-v $GITHUB_WORKSPACE:/data'
