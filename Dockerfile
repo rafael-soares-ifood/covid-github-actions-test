@@ -7,4 +7,4 @@ COPY data_analysis.py /
 COPY COVID-19 /
 RUN pip3 install --no-cache-dir -r /requirements.txt
 
-CMD ["python3", "./data_analysis.py"]
+# CMD ["python3", "./data_analysis.py"]
