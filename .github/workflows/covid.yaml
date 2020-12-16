@@ -15,6 +15,9 @@ jobs:
       - name: Cloning CSSE
         run: git clone https://github.com/CSSEGISandData/COVID-19.git
 
+      - name: show
+        run: ls
+
       - name: Covid data analysis
         uses: ./
 
