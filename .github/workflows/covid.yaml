@@ -1,8 +1,8 @@
 name: covid-workflow
 
-on: [push]
-  # schedule:
-  #   - cron: "*/2 * * * *"
+on: 
+  schedule:
+    - cron: "0 8 * * *"
 
 jobs:
   covid-workflow:
