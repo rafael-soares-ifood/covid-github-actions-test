@@ -11,5 +11,5 @@ description: 'Calculate average and rolling window info from JH covid data.'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  # args:
-  #   - ${{ inputs.who-to-greet }}
+  args:
+    - '-v "$GITHUB_WORKSPACE":/data'

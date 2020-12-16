@@ -13,18 +13,18 @@ def make_country_plot(path:str, country: str):
     df.plot(x='Last_Update', y='Daily_Deaths', lw = 3, alpha = 0.6, ax=ax)
     df.plot(x='Last_Update', y='Rolling_Daily_Deaths', lw = 3, alpha = 0.6, ax=ax)
     plt.ylabel('Daily deaths')
-    plt.savefig("daily_deaths.png", dpi=150)
+    plt.savefig("./data/daily_deaths.png", dpi=150)
 
     fig, ax2 = plt.subplots(figsize=(18,8))
     df.plot(x='Last_Update', y='Daily_Confirmed', lw = 3, alpha = 0.6, ax=ax2)
     df.plot(x='Last_Update', y='Rolling_Daily_Confirmed', lw = 3, alpha = 0.6, ax=ax2)
     plt.ylabel('Daily confirmed cases')
-    plt.savefig("daily_confirmed_cases.png", dpi=150)
+    plt.savefig("./data/daily_confirmed_cases.png", dpi=150)
 
     return None
 
 def process_covid_data(path: str):
-    df = read_csv(path)
+    df = _compose_df(path)
 
     df['Last_Update'] = pd.to_datetime(df['Last_Update']).dt.date
     df = df.groupby(by=['Last_Update', 'Country_Region']).agg('sum').reset_index()
@@ -40,15 +40,12 @@ def process_covid_data(path: str):
 
     return df
 
-def read_csv(path: str):
-    files_list = _get_csv_files_path(path)
-    df = pd.concat([pd.read_csv(f) for f in files_list], ignore_index=True)
-    return df
+def _compose_df(path: str):
+    files_path = _get_csv_files_path(path)
+    return pd.concat([pd.read_csv(f) for f in files_path], ignore_index=True)
 
-def _get_csv_files_path(path) -> List[str]:
-    csvFiles = glob.glob(f'{path}/*.csv')
-    return csvFiles
-
+def _get_csv_files_path(path: str) -> List[str]:
+    return glob.glob(f'{path}/*.csv')
 
 if __name__ == '__main__':
-    make_country_plot("./csse_covid_19_data/csse_covid_19_daily_reports", 'Brazil')
+    make_country_plot("./data/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports", 'Brazil')
