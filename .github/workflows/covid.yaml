@@ -11,9 +11,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
-          persist-credentials: false
-          fetch-depth: 0 
 
       - name: Cloning CSSE repo
         run: git clone https://github.com/CSSEGISandData/COVID-19.git
