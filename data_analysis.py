@@ -89,5 +89,5 @@ def _get_csv_files_path(path: str) -> List[str]:
     return glob.glob(f'{path}/*.csv')
 
 if __name__ == '__main__':
-    make_country_plot("/github/workspace/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports", 'Country_Region', 'Brazil', local=True)
-    make_country_plot("/github/workspace/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports", 'Province_State', 'Sao Paulo', local=True)
+    make_country_plot("/github/workspace/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports", 'Country_Region', 'Brazil')
+    make_country_plot("/github/workspace/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports", 'Province_State', 'Sao Paulo')
