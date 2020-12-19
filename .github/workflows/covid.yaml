@@ -1,6 +1,7 @@
 name: covid-workflow
 
 on: 
+  push:
   schedule:
     - cron: "0 8 * * *"
 
