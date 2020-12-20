@@ -19,7 +19,7 @@ def make_country_plot(path:str, political_region: str, entity: str, local: bool 
     plt.style.use('seaborn')
     fig, ax = plt.subplots(figsize=(18,8))
     plt.hlines(y=max_rolling_daily_deaths,
-               colors='r', alpha=0.6, lw=3,
+               colors='r', alpha=0.6, lw=4,
 	       xmin=df['Last_Update'].min(),
                xmax=df['Last_Update'].max())
     plt.text(df['Last_Update'].min(),
@@ -27,8 +27,8 @@ def make_country_plot(path:str, political_region: str, entity: str, local: bool 
              f"max {int(round(max_rolling_daily_deaths,0))}",
              fontsize=17)
 
-    df.plot(x='Last_Update', y='Daily_Deaths', lw = 3, alpha = 0.6, ax=ax)
-    df.plot(x='Last_Update', y='Rolling_Daily_Deaths', lw = 3, alpha = 0.6, ax=ax)
+    df.plot(x='Last_Update', y='Daily_Deaths', lw = 4, alpha = 0.6, ax=ax)
+    df.plot(x='Last_Update', y='Rolling_Daily_Deaths', lw = 4, alpha = 0.6, ax=ax)
     plt.ylabel('Daily deaths', fontsize=15)
     plt.xlabel("Date", fontsize=15)
     plt.legend(fontsize=19)
@@ -43,7 +43,7 @@ def make_country_plot(path:str, political_region: str, entity: str, local: bool 
 
     fig, ax2 = plt.subplots(figsize=(18,8))
     plt.hlines(y=max_rolling_daily_confirmed,
-               colors='r', alpha=0.6, lw=3, 
+               colors='r', alpha=0.6, lw=4, 
                xmin=df['Last_Update'].min(), 
                xmax=df['Last_Update'].max())
     plt.text(df['Last_Update'].min(),
@@ -51,8 +51,8 @@ def make_country_plot(path:str, political_region: str, entity: str, local: bool 
              f"max {int(round(max_rolling_daily_confirmed,0))}",
              fontsize=17)
 
-    df.plot(x='Last_Update', y='Daily_Confirmed', lw = 3, alpha = 0.6, ax=ax2)
-    df.plot(x='Last_Update', y='Rolling_Daily_Confirmed', lw = 3, alpha = 0.6, ax=ax2)
+    df.plot(x='Last_Update', y='Daily_Confirmed', lw = 4, alpha = 0.6, ax=ax2)
+    df.plot(x='Last_Update', y='Rolling_Daily_Confirmed', lw = 4, alpha = 0.6, ax=ax2)
     plt.ylabel('Daily confirmed cases', fontsize=15)
     plt.xlabel("Date", fontsize=15)
     plt.title(f'Daily number of confirmed cases for {entity}', fontsize=15)

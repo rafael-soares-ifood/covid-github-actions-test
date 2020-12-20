@@ -1,6 +1,6 @@
 # Brazilian Covid status
 
-Data from [CSSE @ John Hopkins University](https://github.com/CSSEGISandData/COVID-19.git)
+Data from [CSSE @ John Hopkins University](https://github.com/CSSEGISandData/COVID-19.git) and [Seade](https://github.com/seade-R/dados-covid-sp).
 
 
 ![Daily confirmed cases](daily_confirmed_cases_Brazil.png?raw=true "daily confirmed cases")

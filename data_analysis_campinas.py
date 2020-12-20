@@ -18,8 +18,8 @@ def make_campinas_plot(path:str, local: bool = False):
              f"max {int(round(max_rolling_daily_deaths,0))}",
              fontsize=17)
 
-    df.plot(x='date', y='obitos_novos', lw = 3, alpha = 0.6, ax=ax)
-    df.plot(x='date', y='obitos_mm7d', lw = 3, alpha = 0.6, ax=ax)
+    df.plot(x='date', y='obitos_novos', lw = 4, alpha = 0.6, ax=ax)
+    df.plot(x='date', y='obitos_mm7d', lw = 4, alpha = 0.6, ax=ax)
     plt.ylabel('Daily deaths', fontsize=15)
     plt.xlabel("Date", fontsize=15)
     plt.legend(fontsize=19)
@@ -42,8 +42,8 @@ def make_campinas_plot(path:str, local: bool = False):
              f"max {int(round(max_rolling_daily_confirmed,0))}",
              fontsize=17)
 
-    df.plot(x='date', y='casos_novos', lw = 3, alpha = 0.6, ax=ax2)
-    df.plot(x='date', y='casos_mm7d', lw = 3, alpha = 0.6, ax=ax2)
+    df.plot(x='date', y='casos_novos', lw = 4, alpha = 0.6, ax=ax2)
+    df.plot(x='date', y='casos_mm7d', lw = 4, alpha = 0.6, ax=ax2)
     plt.ylabel('Daily confirmed cases', fontsize=15)
     plt.xlabel("Date", fontsize=15)
     plt.title(f'Daily number of confirmed cases for Campinas', fontsize=15)
