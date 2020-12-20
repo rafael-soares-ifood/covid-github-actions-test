@@ -13,7 +13,7 @@ def make_country_plot(path:str, political_region: str, entity: str, local: bool 
     max_rolling_daily_deaths = df["Rolling_Daily_Deaths"].max()
     max_rolling_daily_confirmed = df['Rolling_Daily_Confirmed'].max()
 
-
+    plt.style.use('seaborn')
     fig, ax = plt.subplots(figsize=(18,8))
     plt.hlines(y=max_rolling_daily_deaths,
                colors='r', alpha=0.6, lw=3,
