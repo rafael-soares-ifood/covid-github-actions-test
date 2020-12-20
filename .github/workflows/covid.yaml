@@ -16,6 +16,9 @@ jobs:
       - name: Cloning CSSE repo
         run: git clone https://github.com/CSSEGISandData/COVID-19.git
 
+      - name: Cloning seade repo
+        run: git clone https://github.com/seade-R/dados-covid-sp.git
+
       - name: Covid data analysis
         uses: ./
 

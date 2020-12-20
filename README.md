@@ -11,4 +11,7 @@ Data from [CSSE @ John Hopkins University](https://github.com/CSSEGISandData/COV
 
 ![Daily confirmed deaths](daily_deaths_Sao_Paulo.png?raw=true "daily confirmed deaths")
 
+![Daily confirmed cases](daily_confirmed_cases_campinas.png?raw=true "daily confirmed cases")
+
+![Daily confirmed deaths](daily_deaths_campinas.png?raw=true "daily confirmed deaths")
 

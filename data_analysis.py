@@ -1,8 +1,11 @@
 import glob
 from typing import List
+
 import matplotlib.pylab as plt
 import pandas as pd
-from datetime import date
+
+from data_analysis_campinas import make_campinas_plot
+
 
 def make_country_plot(path:str, political_region: str, entity: str, local: bool = False):
 
@@ -66,18 +69,19 @@ def make_country_plot(path:str, political_region: str, entity: str, local: bool 
 
 def process_covid_data(path: str, political_region: str):
     df = _compose_df(path)
+    columns = ['Active', 'Confirmed', 'Deaths']
 
     df['Last_Update'] = pd.to_datetime(df['Last_Update']).dt.date
     df = df.groupby(by=['Last_Update', political_region]).agg('sum').reset_index()
-    df = df.loc[:, [political_region, 'Last_Update', 'Active', 'Confirmed', 'Deaths']]
+    df = df.loc[:, [political_region, 'Last_Update'] + columns]
     df = df.sort_values(by=[political_region, 'Last_Update'])
 
-    diff = df[['Active', 'Confirmed', 'Deaths']].diff()
-    diff.columns = ['Daily_' + i for i in diff.columns]
+    diff = df[columns].diff()
+    diff.columns = [f'Daily_{i}' for i in diff.columns]
     df = pd.concat([df, diff], axis='columns')
 
-    for i in ['Daily_Active', 'Daily_Confirmed', 'Daily_Deaths']:
-        df['Rolling_' + i] = df[i].rolling(7).mean()
+    for i in columns:
+        df[f'Rolling_Daily_{i}'] = df[f'Daily_{i}'].rolling(7).mean()
 
     return df
 
@@ -91,3 +95,4 @@ def _get_csv_files_path(path: str) -> List[str]:
 if __name__ == '__main__':
     make_country_plot("/github/workspace/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports", 'Country_Region', 'Brazil')
     make_country_plot("/github/workspace/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports", 'Province_State', 'Sao Paulo')
+    make_campinas_plot('/github/workspace/dados-covid-sp/data/dados_covid_sp.csv')
