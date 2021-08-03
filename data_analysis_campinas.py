@@ -12,14 +12,14 @@ def make_campinas_plot(path:str, local: bool = False):
 
     plt.style.use('seaborn')
     fig, ax = plt.subplots(figsize=(18,8))
-    plt.hlines(y=max_rolling_daily_deaths, colors='r', alpha=0.6, lw=3, xmin=df['date'].min(), xmax=df['date'].max())
+    plt.hlines(y=max_rolling_daily_deaths, colors='g', alpha=0.6, lw=3, xmin=df['date'].min(), xmax=df['date'].max())
     plt.text(df['date'].min(),
              max_rolling_daily_deaths*1.05,
              f"max {int(round(max_rolling_daily_deaths,0))}",
              fontsize=17)
 
     df.plot(x='date', y='obitos_novos', lw = 4, alpha = 0.6, ax=ax)
-    df.plot(x='date', y='obitos_mm7d', lw = 4, alpha = 0.6, ax=ax)
+    df.plot(x='date', y='obitos_mm7d', lw = 4, alpha = 1.0, ax=ax)
     plt.ylabel('Daily deaths', fontsize=15)
     plt.xlabel("Date", fontsize=15)
     plt.legend(fontsize=19)
