@@ -43,7 +43,7 @@ def make_campinas_plot(path:str, local: bool = False):
              fontsize=17)
 
     df.plot(x='date', y='casos_novos', lw = 4, alpha = 0.6, ax=ax2)
-    df.plot(x='date', y='casos_mm7d', lw = 4, alpha = 0.6, ax=ax2)
+    df.plot(x='date', y='casos_mm7d', lw = 4, alpha = 1.0, ax=ax2)
     plt.ylabel('Daily confirmed cases', fontsize=15)
     plt.xlabel("Date", fontsize=15)
     plt.title(f'Daily number of confirmed cases for Campinas', fontsize=15)
