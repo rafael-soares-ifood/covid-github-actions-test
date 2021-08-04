@@ -1,5 +1,7 @@
 # Brazilian Covid status
 
+[![covid-workflow](https://github.com/rafael-soares-ifood/covid-github-actions-test/actions/workflows/covid.yaml/badge.svg)](https://github.com/rafael-soares-ifood/covid-github-actions-test/actions/workflows/covid.yaml)
+
 Data from [CSSE @ John Hopkins University](https://github.com/CSSEGISandData/COVID-19.git) and [Seade](https://github.com/seade-R/dados-covid-sp).
 
 
