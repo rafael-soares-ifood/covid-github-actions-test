@@ -28,7 +28,7 @@ def make_country_plot(path:str, political_region: str, entity: str, local: bool 
              fontsize=17)
 
     df.plot(x='Last_Update', y='Daily_Deaths', lw = 4, alpha = 0.6, ax=ax)
-    df.plot(x='Last_Update', y='Rolling_Daily_Deaths', lw = 4, alpha = 0.6, ax=ax)
+    df.plot(x='Last_Update', y='Rolling_Daily_Deaths', lw = 4, alpha = 0.9, ax=ax)
     plt.ylabel('Daily deaths', fontsize=15)
     plt.xlabel("Date", fontsize=15)
     plt.legend(fontsize=19)
@@ -52,7 +52,7 @@ def make_country_plot(path:str, political_region: str, entity: str, local: bool 
              fontsize=17)
 
     df.plot(x='Last_Update', y='Daily_Confirmed', lw = 4, alpha = 0.6, ax=ax2)
-    df.plot(x='Last_Update', y='Rolling_Daily_Confirmed', lw = 4, alpha = 0.6, ax=ax2)
+    df.plot(x='Last_Update', y='Rolling_Daily_Confirmed', lw = 4, alpha = 0.9, ax=ax2)
     plt.ylabel('Daily confirmed cases', fontsize=15)
     plt.xlabel("Date", fontsize=15)
     plt.title(f'Daily number of confirmed cases for {entity}', fontsize=15)
