@@ -11,7 +11,7 @@ def make_country_plot(path:str, political_region: str, entity: str, local: bool 
 
     df = process_covid_data(path, political_region)
     df = df.loc[df[political_region] == entity, :]
-    df = df.loc[df['Last_Update'] > df['Last_Update'].min(), :]
+    df = df.loc[df['Last_Update'] > '2020-04-01', :]
 
     max_rolling_daily_deaths = df["Rolling_Daily_Deaths"].max()
     max_rolling_daily_confirmed = df['Rolling_Daily_Confirmed'].max()
