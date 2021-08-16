@@ -7,7 +7,7 @@ import pandas as pd
 from data_analysis_campinas import make_campinas_plot
 
 
-def make_country_plot(path:str, political_region: str, entity: str, local: bool = False):
+def make_country_plot(path:str, political_region: str, entity: str, month: int, local: bool = False):
 
     df = process_covid_data(path, political_region)
     df = df.loc[df[political_region] == entity, :]
@@ -15,7 +15,7 @@ def make_country_plot(path:str, political_region: str, entity: str, local: bool 
     max_rolling_daily_deaths = df["Rolling_Daily_Deaths"].max()
     max_rolling_daily_confirmed = df['Rolling_Daily_Confirmed'].max()
 
-    df = df.loc[df['Last_Update'] > pd.Timestamp(2020,4,1), :]
+    df = df.loc[df['Last_Update'] > pd.Timestamp(2020,month,1), :]
 	
     plt.style.use('seaborn')
     fig, ax = plt.subplots(figsize=(18,8))
@@ -94,6 +94,6 @@ def _get_csv_files_path(path: str) -> List[str]:
     return glob.glob(f'{path}/*.csv')
 
 if __name__ == '__main__':
-    make_country_plot("/github/workspace/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports", 'Country_Region', 'Brazil')
-    make_country_plot("/github/workspace/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports", 'Province_State', 'Sao Paulo')
+    make_country_plot("/github/workspace/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports", 'Country_Region', 'Brazil', 4)
+    make_country_plot("/github/workspace/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports", 'Province_State', 'Sao Paulo', 5)
     make_campinas_plot('/github/workspace/dados-covid-sp/data/dados_covid_sp.csv')
