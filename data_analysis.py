@@ -95,5 +95,5 @@ def _get_csv_files_path(path: str) -> List[str]:
 
 if __name__ == '__main__':
     make_country_plot("/github/workspace/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports", 'Country_Region', 'Brazil', 4)
-    make_country_plot("/github/workspace/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports", 'Province_State', 'Sao Paulo', 5)
+    make_country_plot("/github/workspace/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports", 'Province_State', 'Sao Paulo', 6)
     make_campinas_plot('/github/workspace/dados-covid-sp/data/dados_covid_sp.csv')
