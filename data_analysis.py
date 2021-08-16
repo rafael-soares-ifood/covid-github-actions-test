@@ -11,11 +11,12 @@ def make_country_plot(path:str, political_region: str, entity: str, local: bool 
 
     df = process_covid_data(path, political_region)
     df = df.loc[df[political_region] == entity, :]
-    df = df.loc[df['Last_Update'] > pd.Timestamp(2020,5,10), :]
 
     max_rolling_daily_deaths = df["Rolling_Daily_Deaths"].max()
     max_rolling_daily_confirmed = df['Rolling_Daily_Confirmed'].max()
 
+    df = df.loc[df['Last_Update'] > pd.Timestamp(2020,4,1), :]
+	
     plt.style.use('seaborn')
     fig, ax = plt.subplots(figsize=(18,8))
     plt.hlines(y=max_rolling_daily_deaths,
